@@ -2,16 +2,24 @@ import { MapPin } from "lucide-react";
 
 const groups = [
   {
-    title: "Praha (do 20 km)",
-    towns: ["Praha 1–10", "Praha-západ", "Praha-východ"],
+    title: "Ústecký kraj",
+    towns: ["Bochov", "Toužim", "Žatec", "Louny", "atd."],
   },
   {
-    title: "Středočeský kraj (do 50 km)",
-    towns: ["Beroun", "Kladno", "Mělník", "Mladá Boleslav", "Příbram", "Benešov"],
+    title: "Karlovarský kraj",
+    towns: ["Karlovy Vary", "Sokolov", "Cheb", "atd."],
   },
   {
-    title: "Po dohodě",
-    towns: ["Plzeňsko", "Ústecko", "Pardubicko"],
+    title: "Plzeňský kraj",
+    towns: ["Plzeň", "Tachov", "Rokycany", "atd."],
+  },
+  {
+    title: "Středočeský kraj (sever a západ)",
+    towns: ["Kladno", "Rakovník", "Mělník", "atd."],
+  },
+  {
+    title: "Praha",
+    towns: ["po domluvě"],
   },
 ];
 
@@ -20,16 +28,16 @@ export function CoverageSection() {
     <section id="oblast" className="bg-background py-20">
       <div className="mx-auto max-w-6xl px-4">
         <header className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Kde pracuji</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Kde působíme</p>
           <h2 className="mt-2 text-4xl font-extrabold text-soot md:text-5xl">
-            Praha & celý Středočeský kraj
+            Severní & západní Čechy a Středočeský kraj
           </h2>
           <p className="mt-3 text-muted-foreground">
             Nejste si jistí, jestli k vám dojedu? Zavolejte — větší zakázky řeším po celé ČR.
           </p>
         </header>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {groups.map((g) => (
             <div
               key={g.title}

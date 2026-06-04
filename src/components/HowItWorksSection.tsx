@@ -4,7 +4,7 @@ const steps = [
   { icon: PhoneCall, title: "Zavoláte", desc: "Krátký hovor — domluvíme termín a vysvětlím cenu předem." },
   { icon: CalendarCheck, title: "Domluvíme termín", desc: "Většinou do 3 dnů, v urgentních případech i tentýž den." },
   { icon: Wrench, title: "Odvedu práci", desc: "Profesionálně, čistě, s ohleduplností k vašemu bytu i domu." },
-  { icon: FileCheck2, title: "Dostanete papír", desc: "Revizní/kontrolní zpráva v ruce — pro hasiče i pojišťovnu." },
+  { icon: FileCheck2, title: "Dostanete revizní zprávu", desc: "Protokol o provedení povinné roční kontroly spalinových cest." },
 ];
 
 export function HowItWorksSection() {
@@ -22,16 +22,22 @@ export function HowItWorksSection() {
           <div className="absolute left-0 right-0 top-6 hidden h-px bg-ember/40 md:block" />
           {steps.map((s, i) => {
             const Icon = s.icon;
+            const stepNumber = String(i + 1).padStart(2, "0");
             return (
-              <li key={s.title} className="relative">
+              <li key={s.title} className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:shadow-[var(--shadow-soft)] hover:-translate-y-1">
+                {/* Background number */}
+                <div className="absolute -right-4 -top-6 text-[8rem] font-black leading-none text-muted/30 select-none z-0">
+                  {stepNumber}
+                </div>
+                
                 <div className="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-ember text-soot shadow-[var(--shadow-ember)]">
                   <Icon className="h-5 w-5" />
                 </div>
-                <p className="mt-4 font-display text-sm font-bold uppercase tracking-wider text-ember">
+                <p className="relative z-10 mt-6 font-display text-sm font-bold uppercase tracking-wider text-ember">
                   Krok {i + 1}
                 </p>
-                <h3 className="mt-1 text-xl font-extrabold text-soot">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                <h3 className="relative z-10 mt-1 text-xl font-extrabold text-soot">{s.title}</h3>
+                <p className="relative z-10 mt-2 text-sm text-muted-foreground">{s.desc}</p>
               </li>
             );
           })}

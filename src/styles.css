@@ -4,11 +4,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Fonts — Barlow Condensed for display, Nunito for body */
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap");
-
 @theme inline {
-  --font-display: "Barlow Condensed", system-ui, sans-serif;
+  --font-display: "Sora", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);

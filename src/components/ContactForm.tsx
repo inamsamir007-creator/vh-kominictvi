@@ -26,11 +26,11 @@ export function ContactForm() {
           </p>
 
           <a
-            href="tel:+420777123456"
-            className="mt-6 inline-flex h-12 items-center gap-2 rounded-md bg-destructive px-6 font-bold text-destructive-foreground"
+            href="tel:+420777444707"
+            className="mt-6 inline-flex h-12 items-center gap-2 rounded-md bg-destructive px-6 font-bold text-destructive-foreground transition hover:brightness-110"
           >
             <Phone className="h-5 w-5" />
-            +420 777 123 456
+            +420 777 444 707
           </a>
         </div>
 
@@ -63,7 +63,7 @@ export function ContactForm() {
                   required
                   value={form.town}
                   onChange={(e) => setForm({ ...form, town: e.target.value })}
-                  placeholder="např. Beroun"
+                  placeholder="např. Karlovy Vary"
                   className="h-11 rounded-md border border-border bg-background px-3 outline-none focus:ring-2 focus:ring-ember"
                 />
               </label>
@@ -77,6 +77,8 @@ export function ContactForm() {
                   <option>Revize</option>
                   <option>Pravidelná kontrola</option>
                   <option>Čištění</option>
+                  <option>Frézování</option>
+                  <option>Vložkování</option>
                   <option>Posouzení závady</option>
                   <option>Nevím, poraďte</option>
                 </select>

@@ -1,4 +1,4 @@
-import { FileCheck2, Brush, ShieldCheck, AlertTriangle, MessageCircle } from "lucide-react";
+import { FileCheck2, Brush, ShieldCheck, AlertTriangle, MessageCircle, Cog, Layers } from "lucide-react";
 
 const services = [
   {
@@ -10,6 +10,8 @@ const services = [
   { icon: Brush, title: "Čištění", desc: "Mechanické vymetení, odstranění sazí a dehtu. Bez nepořádku v bytě." },
   { icon: ShieldCheck, title: "Pravidelná kontrola", desc: "Roční kontrola dle vyhlášky 34/2016 Sb. včetně protokolu." },
   { icon: AlertTriangle, title: "Závady & posouzení", desc: "Diagnostika tahu, vlhkosti, dehtových usazenin a vyvložkování." },
+  { icon: Cog, title: "Frézování", desc: "Zvětšení průměru komínového průduchu pro zvýšení tahu nebo instalaci tlustší vložky." },
+  { icon: Layers, title: "Vložkování", desc: "Sanace komína vložením nerezové či ohebné vložky. Nezbytné pro moderní kondenzační kotle." },
 ];
 
 export function ServicesSection() {
@@ -28,20 +30,20 @@ export function ServicesSection() {
         </header>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {services.map((s, i) => {
+          {services.map((s) => {
             const Icon = s.icon;
             const featured = s.featured;
             return (
               <article
                 key={s.title}
                 className={[
-                  "group relative rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]",
-                  featured ? "md:col-span-2 md:row-span-1 bg-soot text-cream border-soot" : "",
+                  "group relative rounded-2xl border border-border bg-card p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] hover:border-ember/30",
+                  featured ? "md:col-span-2 md:row-span-1 bg-soot text-cream border-soot hover:border-ember" : "",
                 ].join(" ")}
               >
                 <div
                   className={[
-                    "grid h-11 w-11 place-items-center rounded-lg",
+                    "grid h-11 w-11 place-items-center rounded-lg transition-colors group-hover:bg-ember group-hover:text-soot",
                     featured ? "bg-ember text-soot" : "bg-ember/20 text-soot",
                   ].join(" ")}
                 >

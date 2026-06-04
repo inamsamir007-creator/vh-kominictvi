@@ -1,7 +1,7 @@
 import { Phone, Flame } from "lucide-react";
 
-const PHONE_DISPLAY = "+420 777 123 456";
-const PHONE_HREF = "tel:+420777123456";
+const PHONE_DISPLAY = "+420 777 444 707";
+const PHONE_HREF = "tel:+420777444707";
 
 export function StickyHeader() {
   return (

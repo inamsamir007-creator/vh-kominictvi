@@ -9,7 +9,7 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section id="postup" className="bg-background py-20">
+    <section id="postup" className="scroll-mt-20 bg-background py-20">
       <div className="mx-auto max-w-6xl px-4">
         <header className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Postup</p>

@@ -25,7 +25,7 @@ const groups = [
 
 export function CoverageSection() {
   return (
-    <section id="oblast" className="bg-background py-20">
+    <section id="oblast" className="scroll-mt-20 border-y border-border bg-card py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <header className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Kde působíme</p>

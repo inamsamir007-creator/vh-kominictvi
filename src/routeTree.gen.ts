@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SluzbyZavadyAPosouzeniRouteImport } from './routes/sluzby/zavady-a-posouzeni'
+import { Route as SluzbyVlozkovaniRouteImport } from './routes/sluzby/vlozkovani'
+import { Route as SluzbyRevizeKominuRouteImport } from './routes/sluzby/revize-kominu'
+import { Route as SluzbyFrezovaniRouteImport } from './routes/sluzby/frezovani'
+import { Route as SluzbyCisteniAKontrolaRouteImport } from './routes/sluzby/cisteni-a-kontrola'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SluzbyZavadyAPosouzeniRoute = SluzbyZavadyAPosouzeniRouteImport.update({
+  id: '/sluzby/zavady-a-posouzeni',
+  path: '/sluzby/zavady-a-posouzeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SluzbyVlozkovaniRoute = SluzbyVlozkovaniRouteImport.update({
+  id: '/sluzby/vlozkovani',
+  path: '/sluzby/vlozkovani',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SluzbyRevizeKominuRoute = SluzbyRevizeKominuRouteImport.update({
+  id: '/sluzby/revize-kominu',
+  path: '/sluzby/revize-kominu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SluzbyFrezovaniRoute = SluzbyFrezovaniRouteImport.update({
+  id: '/sluzby/frezovani',
+  path: '/sluzby/frezovani',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SluzbyCisteniAKontrolaRoute = SluzbyCisteniAKontrolaRouteImport.update({
+  id: '/sluzby/cisteni-a-kontrola',
+  path: '/sluzby/cisteni-a-kontrola',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sluzby/cisteni-a-kontrola': typeof SluzbyCisteniAKontrolaRoute
+  '/sluzby/frezovani': typeof SluzbyFrezovaniRoute
+  '/sluzby/revize-kominu': typeof SluzbyRevizeKominuRoute
+  '/sluzby/vlozkovani': typeof SluzbyVlozkovaniRoute
+  '/sluzby/zavady-a-posouzeni': typeof SluzbyZavadyAPosouzeniRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sluzby/cisteni-a-kontrola': typeof SluzbyCisteniAKontrolaRoute
+  '/sluzby/frezovani': typeof SluzbyFrezovaniRoute
+  '/sluzby/revize-kominu': typeof SluzbyRevizeKominuRoute
+  '/sluzby/vlozkovani': typeof SluzbyVlozkovaniRoute
+  '/sluzby/zavady-a-posouzeni': typeof SluzbyZavadyAPosouzeniRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sluzby/cisteni-a-kontrola': typeof SluzbyCisteniAKontrolaRoute
+  '/sluzby/frezovani': typeof SluzbyFrezovaniRoute
+  '/sluzby/revize-kominu': typeof SluzbyRevizeKominuRoute
+  '/sluzby/vlozkovani': typeof SluzbyVlozkovaniRoute
+  '/sluzby/zavady-a-posouzeni': typeof SluzbyZavadyAPosouzeniRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/sluzby/cisteni-a-kontrola'
+    | '/sluzby/frezovani'
+    | '/sluzby/revize-kominu'
+    | '/sluzby/vlozkovani'
+    | '/sluzby/zavady-a-posouzeni'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/sluzby/cisteni-a-kontrola'
+    | '/sluzby/frezovani'
+    | '/sluzby/revize-kominu'
+    | '/sluzby/vlozkovani'
+    | '/sluzby/zavady-a-posouzeni'
+  id:
+    | '__root__'
+    | '/'
+    | '/sluzby/cisteni-a-kontrola'
+    | '/sluzby/frezovani'
+    | '/sluzby/revize-kominu'
+    | '/sluzby/vlozkovani'
+    | '/sluzby/zavady-a-posouzeni'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SluzbyCisteniAKontrolaRoute: typeof SluzbyCisteniAKontrolaRoute
+  SluzbyFrezovaniRoute: typeof SluzbyFrezovaniRoute
+  SluzbyRevizeKominuRoute: typeof SluzbyRevizeKominuRoute
+  SluzbyVlozkovaniRoute: typeof SluzbyVlozkovaniRoute
+  SluzbyZavadyAPosouzeniRoute: typeof SluzbyZavadyAPosouzeniRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sluzby/zavady-a-posouzeni': {
+      id: '/sluzby/zavady-a-posouzeni'
+      path: '/sluzby/zavady-a-posouzeni'
+      fullPath: '/sluzby/zavady-a-posouzeni'
+      preLoaderRoute: typeof SluzbyZavadyAPosouzeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sluzby/vlozkovani': {
+      id: '/sluzby/vlozkovani'
+      path: '/sluzby/vlozkovani'
+      fullPath: '/sluzby/vlozkovani'
+      preLoaderRoute: typeof SluzbyVlozkovaniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sluzby/revize-kominu': {
+      id: '/sluzby/revize-kominu'
+      path: '/sluzby/revize-kominu'
+      fullPath: '/sluzby/revize-kominu'
+      preLoaderRoute: typeof SluzbyRevizeKominuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sluzby/frezovani': {
+      id: '/sluzby/frezovani'
+      path: '/sluzby/frezovani'
+      fullPath: '/sluzby/frezovani'
+      preLoaderRoute: typeof SluzbyFrezovaniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sluzby/cisteni-a-kontrola': {
+      id: '/sluzby/cisteni-a-kontrola'
+      path: '/sluzby/cisteni-a-kontrola'
+      fullPath: '/sluzby/cisteni-a-kontrola'
+      preLoaderRoute: typeof SluzbyCisteniAKontrolaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SluzbyCisteniAKontrolaRoute: SluzbyCisteniAKontrolaRoute,
+  SluzbyFrezovaniRoute: SluzbyFrezovaniRoute,
+  SluzbyRevizeKominuRoute: SluzbyRevizeKominuRoute,
+  SluzbyVlozkovaniRoute: SluzbyVlozkovaniRoute,
+  SluzbyZavadyAPosouzeniRoute: SluzbyZavadyAPosouzeniRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

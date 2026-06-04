@@ -1,4 +1,5 @@
 import { FileCheck2, Brush, ShieldCheck, AlertTriangle, MessageCircle, Cog, Layers } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const services = [
   {
@@ -6,17 +7,18 @@ const services = [
     title: "Revize komínů",
     desc: "Revizní zpráva pro stavební úřad, hasiče i pojišťovnu. Platí pro nové i rekonstruované komíny.",
     featured: true,
+    href: "/sluzby/revize-kominu",
   },
-  { icon: Brush, title: "Čištění", desc: "Mechanické vymetení, odstranění sazí a dehtu. Bez nepořádku v bytě." },
-  { icon: ShieldCheck, title: "Pravidelná kontrola", desc: "Roční kontrola dle vyhlášky 34/2016 Sb. včetně protokolu." },
-  { icon: AlertTriangle, title: "Závady & posouzení", desc: "Diagnostika tahu, vlhkosti, dehtových usazenin a vyvložkování." },
-  { icon: Cog, title: "Frézování", desc: "Zvětšení průměru komínového průduchu pro zvýšení tahu nebo instalaci tlustší vložky." },
-  { icon: Layers, title: "Vložkování", desc: "Sanace komína vložením nerezové či ohebné vložky. Nezbytné pro moderní kondenzační kotle." },
+  { icon: Brush, title: "Čištění", desc: "Mechanické vymetení, odstranění sazí a dehtu. Bez nepořádku v bytě.", href: "/sluzby/cisteni-a-kontrola" },
+  { icon: ShieldCheck, title: "Pravidelná kontrola", desc: "Roční kontrola dle vyhlášky 34/2016 Sb. včetně protokolu.", href: "/sluzby/cisteni-a-kontrola" },
+  { icon: AlertTriangle, title: "Závady & posouzení", desc: "Diagnostika tahu, vlhkosti, dehtových usazenin a vyvložkování.", href: "/sluzby/zavady-a-posouzeni" },
+  { icon: Cog, title: "Frézování", desc: "Zvětšení průměru komínového průduchu pro zvýšení tahu nebo instalaci tlustší vložky.", href: "/sluzby/frezovani" },
+  { icon: Layers, title: "Vložkování", desc: "Sanace komína vložením nerezové či ohebné vložky. Nezbytné pro moderní kondenzační kotle.", href: "/sluzby/vlozkovani" },
 ];
 
 export function ServicesSection() {
   return (
-    <section id="sluzby" className="bg-background py-20">
+    <section id="sluzby" className="scroll-mt-20 bg-background py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <header className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Co dělám</p>
@@ -34,17 +36,18 @@ export function ServicesSection() {
             const Icon = s.icon;
             const featured = s.featured;
             return (
-              <article
+              <Link
+                to={s.href}
                 key={s.title}
                 className={[
-                  "group relative rounded-2xl border border-border bg-card p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] hover:border-ember/30",
-                  featured ? "md:col-span-2 md:row-span-1 bg-soot text-cream border-soot hover:border-ember" : "",
+                  "group relative block rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[var(--shadow-ember)] hover:border-ember/50",
+                  featured ? "md:col-span-2 md:row-span-1 bg-soot text-cream border-soot hover:border-ember/80" : "",
                 ].join(" ")}
               >
                 <div
                   className={[
-                    "grid h-11 w-11 place-items-center rounded-lg transition-colors group-hover:bg-ember group-hover:text-soot",
-                    featured ? "bg-ember text-soot" : "bg-ember/20 text-soot",
+                    "grid h-11 w-11 place-items-center rounded-lg transition-all duration-500 group-hover:scale-110 group-hover:bg-ember group-hover:text-soot",
+                    featured ? "bg-ember text-soot shadow-[0_0_15px_rgba(199,103,42,0.4)] group-hover:shadow-[0_0_25px_rgba(199,103,42,0.6)]" : "bg-ember/20 text-soot",
                   ].join(" ")}
                 >
                   <Icon className="h-5 w-5" />
@@ -60,7 +63,7 @@ export function ServicesSection() {
                     Nejčastější zakázka
                   </span>
                 )}
-              </article>
+              </Link>
             );
           })}
         </div>

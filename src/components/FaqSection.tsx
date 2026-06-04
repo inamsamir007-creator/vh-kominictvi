@@ -7,6 +7,10 @@ import {
 
 const faqs = [
   {
+    q: "Účtujete si cestovné k zákazníkovi?",
+    a: "Doprava v rámci Severních a západních Čech a Středočeského kraje je zahrnuta v ceně služby, takže neplatíte žádné skryté poplatky za výjezd.",
+  },
+  {
     q: "Kolik stojí revize komínu?",
     a: "Standardní revize rodinného domu vychází od 1 200 Kč včetně písemné zprávy. Přesnou cenu vždy řeknu předem po telefonu, žádné překvapení na faktuře.",
   },
@@ -30,7 +34,7 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq" className="bg-background py-20">
+    <section id="faq" className="scroll-mt-20 bg-background py-20">
       <div className="mx-auto max-w-3xl px-4">
         <header className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Časté dotazy</p>

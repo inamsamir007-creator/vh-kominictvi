@@ -11,7 +11,7 @@ export function MobileCallBar() {
           <Phone className="h-4 w-4" /> Zavolat
         </a>
         <a
-          href="#kontakt"
+          href="/#kontakt"
           className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border bg-card font-bold text-soot"
         >
           <MessageCircle className="h-4 w-4" /> Poptávka

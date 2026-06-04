@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { StickyHeader } from "@/components/StickyHeader";
 import { HeroSection } from "@/components/HeroSection";
 import { LegalCalloutBar } from "@/components/LegalCalloutBar";
 import { ServicesSection } from "@/components/ServicesSection";
@@ -9,13 +8,11 @@ import { TrustSection } from "@/components/TrustSection";
 import { CoverageSection } from "@/components/CoverageSection";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactForm } from "@/components/ContactForm";
-import { Footer } from "@/components/Footer";
-import { MobileCallBar } from "@/components/MobileCallBar";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VH Kominictví — Revize, čištění a kontroly komínů | Praha" },
+      { title: "VH Kominictví — Revize, čištění a kontroly komínů | Severní & západní Čechy a Středočeský kraj" },
       {
         name: "description",
         content:
@@ -24,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "VH Kominictví — Revize a kontroly komínů" },
       {
         property: "og:description",
-        content: "Komín v pořádku. Papíry hned. Praha a Středočeský kraj.",
+        content: "Komín v pořádku. Papíry hned. Severní & západní Čechy a Středočeský kraj.",
       },
     ],
   }),
@@ -33,21 +30,16 @@ export const Route = createFileRoute("/")({
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-background pb-16 md:pb-0">
-      <StickyHeader />
-      <main>
-        <HeroSection />
-        <LegalCalloutBar />
-        <ServicesSection />
-        <FrequencyTable />
-        <HowItWorksSection />
-        <TrustSection />
-        <CoverageSection />
-        <FaqSection />
-        <ContactForm />
-      </main>
-      <Footer />
-      <MobileCallBar />
-    </div>
+    <>
+      <HeroSection />
+      <LegalCalloutBar />
+      <ServicesSection />
+      <FrequencyTable />
+      <HowItWorksSection />
+      <TrustSection />
+      <CoverageSection />
+      <FaqSection />
+      <ContactForm />
+    </>
   );
 }

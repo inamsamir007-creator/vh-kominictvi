@@ -1,12 +1,52 @@
 import { Phone, CheckCircle2, Star } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useRef } from "react";
 
 const PHONE_HREF = "tel:+420777444707";
 
+function MagneticButton({ children, href }: { children: React.ReactNode; href: string }) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current!.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <motion.a
+      ref={ref}
+      href={href}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      className="group inline-flex h-14 items-center justify-center gap-2 rounded-md bg-destructive px-8 text-lg font-bold text-destructive-foreground shadow-[var(--shadow-ember)] hover:brightness-110"
+    >
+      {children}
+    </motion.a>
+  );
+}
+
 export function HeroSection() {
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
+  const imageY = useTransform(scrollY, [0, 500], [0, 50]);
+
   return (
     <section id="top" className="relative overflow-hidden">
       {/* warm gradient background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-muted" />
+      <motion.div 
+        style={{ y: backgroundY }}
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-muted" 
+      />
       <div className="absolute -right-24 top-10 -z-10 h-72 w-72 rounded-full bg-ember/25 blur-3xl" />
 
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-12 md:py-24">
@@ -24,29 +64,27 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={PHONE_HREF}
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-destructive px-8 text-lg font-bold text-destructive-foreground shadow-[var(--shadow-soft)] transition hover:brightness-110 hover:shadow-[0_8px_30px_-8px_oklch(0.55_0.19_28/0.5)]"
-            >
-              <Phone className="h-5 w-5" />
+            <MagneticButton href={PHONE_HREF}>
+              <Phone aria-hidden="true" className="h-5 w-5 transition-transform group-hover:-rotate-12" />
               Zavolat zdarma
-            </a>
+            </MagneticButton>
             <a
               href="#kontakt"
-              className="inline-flex h-14 items-center justify-center rounded-md border border-border bg-card px-8 text-lg font-bold text-soot transition hover:bg-muted hover:shadow-[var(--shadow-soft)]"
+              className="inline-flex h-14 items-center justify-center rounded-md border border-border bg-card/80 px-8 text-lg font-bold text-soot backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:bg-muted hover:shadow-[var(--shadow-soft)]"
             >
-              Napsat poptávku
+              Získat nezávaznou nabídku
             </a>
           </div>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-soot">
             {[
-              "Certifikace — revizní technik spalinových cest",
+              "Certifikace — revizní technik",
+              "14 let praxe v oboru",
+              "Více než 500 klientů ročně",
               "Pojištění odpovědnosti 5 mil. Kč",
-              "Bez skrytých poplatků",
             ].map((t) => (
               <li key={t} className="inline-flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-ember" />
+                <CheckCircle2 aria-hidden="true" className="h-4 w-4 text-ember" />
                 <span className="font-bold">{t}</span>
               </li>
             ))}
@@ -54,12 +92,14 @@ export function HeroSection() {
         </div>
 
         {/* Owner photo card */}
-        <div className="md:col-span-5">
-          <div className="relative mx-auto max-w-sm rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] fade-up">
+        <motion.div style={{ y: imageY }} className="md:col-span-5">
+          <div className="relative mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up">
             <div className="overflow-hidden rounded-xl">
               <img
                 src="/vladan.jpg"
                 alt="Vladan Husařík — kominík VH Kominictví"
+                width={400}
+                height={500}
                 className="aspect-[4/5] w-full object-cover object-top"
                 loading="eager"
               />
@@ -71,14 +111,14 @@ export function HeroSection() {
               </div>
               <div className="rounded-md bg-ember/20 px-3 py-1.5 text-center">
                 <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-ember text-ember" />
+                  <Star aria-hidden="true" className="h-4 w-4 fill-ember text-ember" />
                   <p className="font-display text-2xl font-bold leading-none text-soot">4,9</p>
                 </div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Google</p>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

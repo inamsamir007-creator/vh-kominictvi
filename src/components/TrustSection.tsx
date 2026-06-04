@@ -4,7 +4,7 @@ const reviews = [
   {
     text: "Přijel přesně na čas, vše rychle vyčistil, vysvětlil mi stav komína a hned na místě vystavil zprávu. Konečně někdo, kdo to bere vážně.",
     author: "Jana K.",
-    place: "Praha 6",
+    place: "Žatec",
   },
   {
     text: "Férová cena, žádné překvapení na faktuře. Po práci nezůstal v bytě ani prach. Doporučuji všem sousedům.",
@@ -20,7 +20,7 @@ const reviews = [
 
 export function TrustSection() {
   return (
-    <section id="recenze" className="bg-muted/40 py-20">
+    <section id="recenze" className="scroll-mt-20 overflow-hidden bg-background py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <header className="flex flex-wrap items-end justify-between gap-4">
           <div>

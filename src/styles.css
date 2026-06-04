@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -84,8 +85,8 @@
   --ember-foreground: oklch(0.22 0.015 50);
   --brick: oklch(0.55 0.19 28);
 
-  --shadow-soft: 0 6px 24px -12px oklch(0.22 0.015 50 / 0.18);
-  --shadow-ember: 0 8px 30px -12px oklch(0.78 0.16 70 / 0.45);
+  --shadow-soft: 0 10px 40px -10px oklch(0.22 0.015 50 / 0.12);
+  --shadow-ember: 0 12px 45px -10px oklch(0.78 0.16 70 / 0.35);
 }
 
 @layer base {

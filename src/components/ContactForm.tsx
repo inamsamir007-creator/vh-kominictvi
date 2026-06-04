@@ -25,7 +25,7 @@ export function ContactForm() {
           "Telefonní číslo": form.phone,
           "E-mail": form.email,
           "Obec / město": form.town,
-          "Služba": form.service,
+          Služba: form.service,
         }),
       });
 
@@ -77,7 +77,9 @@ export function ContactForm() {
           ) : (
             <form onSubmit={handleSubmit} className="grid gap-4">
               <label className="group grid gap-1.5">
-                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">Telefon</span>
+                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">
+                  Telefon
+                </span>
                 <input
                   required
                   type="tel"
@@ -91,7 +93,9 @@ export function ContactForm() {
                 />
               </label>
               <label className="group grid gap-1.5">
-                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">E-mail</span>
+                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">
+                  E-mail
+                </span>
                 <input
                   required
                   type="email"
@@ -104,7 +108,9 @@ export function ContactForm() {
                 />
               </label>
               <label className="group grid gap-1.5">
-                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">Obec / město</span>
+                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">
+                  Obec / město
+                </span>
                 <input
                   required
                   autoComplete="address-level2"
@@ -115,7 +121,9 @@ export function ContactForm() {
                 />
               </label>
               <label className="group grid gap-1.5">
-                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">Co potřebujete</span>
+                <span className="text-sm font-semibold transition-colors group-focus-within:text-ember">
+                  Co potřebujete
+                </span>
                 <select
                   value={form.service}
                   onChange={(e) => setForm({ ...form, service: e.target.value })}
@@ -142,7 +150,10 @@ export function ContactForm() {
                   </>
                 ) : (
                   <>
-                    <Send aria-hidden="true" className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <Send
+                      aria-hidden="true"
+                      className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                    />
                     Odeslat poptávku
                   </>
                 )}

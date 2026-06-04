@@ -1,10 +1,26 @@
 import { PhoneCall, CalendarCheck, Wrench, FileCheck2 } from "lucide-react";
 
 const steps = [
-  { icon: PhoneCall, title: "Zavoláte", desc: "Krátký hovor — domluvíme termín a vysvětlím cenu předem." },
-  { icon: CalendarCheck, title: "Domluvíme termín", desc: "Většinou do 3 dnů, v urgentních případech i tentýž den." },
-  { icon: Wrench, title: "Odvedu práci", desc: "Profesionálně, čistě, s ohleduplností k vašemu bytu i domu." },
-  { icon: FileCheck2, title: "Dostanete revizní zprávu", desc: "Protokol o provedení povinné roční kontroly spalinových cest." },
+  {
+    icon: PhoneCall,
+    title: "Zavoláte",
+    desc: "Krátký hovor — domluvíme termín a vysvětlím cenu předem.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Domluvíme termín",
+    desc: "Většinou do 3 dnů, v urgentních případech i tentýž den.",
+  },
+  {
+    icon: Wrench,
+    title: "Odvedu práci",
+    desc: "Profesionálně, čistě, s ohleduplností k vašemu bytu i domu.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Dostanete revizní zprávu",
+    desc: "Protokol o provedení povinné roční kontroly spalinových cest.",
+  },
 ];
 
 export function HowItWorksSection() {
@@ -24,12 +40,15 @@ export function HowItWorksSection() {
             const Icon = s.icon;
             const stepNumber = String(i + 1).padStart(2, "0");
             return (
-              <li key={s.title} className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:shadow-[var(--shadow-soft)] hover:-translate-y-1">
+              <li
+                key={s.title}
+                className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:shadow-[var(--shadow-soft)] hover:-translate-y-1"
+              >
                 {/* Background number */}
                 <div className="absolute -right-4 -top-6 text-[8rem] font-black leading-none text-muted/30 select-none z-0">
                   {stepNumber}
                 </div>
-                
+
                 <div className="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-ember text-soot shadow-[var(--shadow-ember)]">
                   <Icon className="h-5 w-5" />
                 </div>

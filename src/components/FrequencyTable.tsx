@@ -2,7 +2,10 @@ import { useState } from "react";
 
 type Fuel = "tuhe" | "kapalne" | "plynne";
 
-const data: Record<Fuel, { label: string; rows: { use: string; check: string; clean: string; highlight?: boolean }[] }> = {
+const data: Record<
+  Fuel,
+  { label: string; rows: { use: string; check: string; clean: string; highlight?: boolean }[] }
+> = {
   tuhe: {
     label: "Tuhá paliva (dřevo, uhlí)",
     rows: [
@@ -35,7 +38,9 @@ export function FrequencyTable() {
     <section id="cetnost" className="scroll-mt-20 bg-muted/40 py-20">
       <div className="mx-auto max-w-6xl px-4">
         <header className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Vyhláška 34/2016</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">
+            Vyhláška 34/2016
+          </p>
           <h2 className="mt-2 text-4xl font-extrabold text-soot md:text-5xl">
             Jak často musíte komín řešit
           </h2>
@@ -76,7 +81,13 @@ export function FrequencyTable() {
                   <td className="px-5 py-4 font-semibold text-soot">{r.use}</td>
                   <td className="px-5 py-4 text-soot">{r.check}</td>
                   <td className="px-5 py-4">
-                    <span className={r.highlight ? "inline-block rounded-full bg-ember px-3 py-1 text-sm font-bold text-soot" : "text-soot"}>
+                    <span
+                      className={
+                        r.highlight
+                          ? "inline-block rounded-full bg-ember px-3 py-1 text-sm font-bold text-soot"
+                          : "text-soot"
+                      }
+                    >
                       {r.clean}
                     </span>
                   </td>
@@ -98,7 +109,14 @@ export function FrequencyTable() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Čištění</p>
-                  <p className={["mt-1 font-semibold", r.highlight ? "inline-block rounded-full bg-ember px-2 py-0.5 text-soot" : "text-soot"].join(" ")}>
+                  <p
+                    className={[
+                      "mt-1 font-semibold",
+                      r.highlight
+                        ? "inline-block rounded-full bg-ember px-2 py-0.5 text-soot"
+                        : "text-soot",
+                    ].join(" ")}
+                  >
                     {r.clean}
                   </p>
                 </div>

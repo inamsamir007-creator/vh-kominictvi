@@ -9,7 +9,10 @@ export function StickyHeader() {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <a href="/#top" className="group flex items-center gap-2">
           <span className="grid h-8 w-8 place-items-center rounded-md bg-soot text-cream transition-transform group-hover:scale-105">
-            <Flame aria-hidden="true" className="h-4 w-4 text-ember transition-colors group-hover:animate-pulse" />
+            <Flame
+              aria-hidden="true"
+              className="h-4 w-4 text-ember transition-colors group-hover:animate-pulse"
+            />
           </span>
           <span className="font-display text-xl font-bold tracking-tight text-soot">
             VH Kominictví

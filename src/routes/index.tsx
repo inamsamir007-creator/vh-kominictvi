@@ -12,7 +12,10 @@ import { ContactForm } from "@/components/ContactForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VH Kominictví — Revize, čištění a kontroly komínů | Severní & západní Čechy a Středočeský kraj" },
+      {
+        title:
+          "VH Kominictví — Revize, čištění a kontroly komínů | Severní & západní Čechy a Středočeský kraj",
+      },
       {
         name: "description",
         content:

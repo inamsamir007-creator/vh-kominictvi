@@ -43,9 +43,9 @@ export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden">
       {/* warm gradient background */}
-      <motion.div 
+      <motion.div
         style={{ y: backgroundY }}
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-muted" 
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-muted"
       />
       <div className="absolute -right-24 top-10 -z-10 h-72 w-72 rounded-full bg-ember/25 blur-3xl" />
 
@@ -54,18 +54,22 @@ export function HeroSection() {
           <h1 className="mt-5 text-6xl font-extrabold tracking-tight text-soot md:text-8xl">
             Komín v pořádku.
             <br />
-            <span className="bg-gradient-to-r from-soot/70 to-soot/50 bg-clip-text text-transparent">Papíry hned.</span>
+            <span className="bg-gradient-to-r from-soot/70 to-soot/50 bg-clip-text text-transparent">
+              Papíry hned.
+            </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
-            Revize, čištění a kontroly komínů podle vyhlášky č. 34/2016 Sb.
-            Přijedeme, uklidíme po sobě a vystavíme zprávu pro hasiče
-            i pojišťovnu — bez čekání.
+            Revize, čištění a kontroly komínů podle vyhlášky č. 34/2016 Sb. Přijedeme, uklidíme po
+            sobě a vystavíme zprávu pro hasiče i pojišťovnu — bez čekání.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <MagneticButton href={PHONE_HREF}>
-              <Phone aria-hidden="true" className="h-5 w-5 transition-transform group-hover:-rotate-12" />
+              <Phone
+                aria-hidden="true"
+                className="h-5 w-5 transition-transform group-hover:-rotate-12"
+              />
               Zavolat zdarma
             </MagneticButton>
             <a
@@ -114,7 +118,9 @@ export function HeroSection() {
                   <Star aria-hidden="true" className="h-4 w-4 fill-ember text-ember" />
                   <p className="font-display text-2xl font-bold leading-none text-soot">4,9</p>
                 </div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Google</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  Google
+                </p>
               </div>
             </div>
           </div>

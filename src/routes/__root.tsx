@@ -88,8 +88,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:title", content: "VH Kominictví — Revize, čištění a kontroly komínů" },
       { name: "twitter:title", content: "VH Kominictví — Revize, čištění a kontroly komínů" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44c8210-e54e-450f-af34-50694c517f1c/id-preview-8769b082--4813cba9-e859-41ec-9a97-505914ee6a22.lovable.app-1780154257768.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44c8210-e54e-450f-af34-50694c517f1c/id-preview-8769b082--4813cba9-e859-41ec-9a97-505914ee6a22.lovable.app-1780154257768.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44c8210-e54e-450f-af34-50694c517f1c/id-preview-8769b082--4813cba9-e859-41ec-9a97-505914ee6a22.lovable.app-1780154257768.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44c8210-e54e-450f-af34-50694c517f1c/id-preview-8769b082--4813cba9-e859-41ec-9a97-505914ee6a22.lovable.app-1780154257768.png",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
@@ -97,7 +105,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: "https://vhkominictvi.cz/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap",
+      },
       { rel: "stylesheet", href: appCss },
     ],
   }),

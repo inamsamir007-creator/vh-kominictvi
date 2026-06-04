@@ -5,8 +5,12 @@ export const Route = createFileRoute("/sluzby/frezovani")({
   head: () => ({
     meta: [
       { title: "Frézování komínů | Rychlá obnova tahu | VH Kominictví" },
-      { name: "description", content: "Ekonomicky výhodný a šetrný způsob rekonstrukce komínového tělesa bez bourání. Zvětšete průduch a připravte komín pro bezpečné vložkování." }
-    ]
+      {
+        name: "description",
+        content:
+          "Ekonomicky výhodný a šetrný způsob rekonstrukce komínového tělesa bez bourání. Zvětšete průduch a připravte komín pro bezpečné vložkování.",
+      },
+    ],
   }),
   component: FrezovaniPage,
 });
@@ -18,20 +22,35 @@ function FrezovaniPage() {
       subtitle="Chybí vašemu komínu správný tah? Frézování je ekonomicky výhodná a rychlá cesta k bezpečnému a plně funkčnímu komínu bez nutnosti demolice."
     >
       <p className="lead">
-        Funkční komín je jednou z nejdůležitějších součástí každé zdravé budovy. Slouží k bezpečnému odvádění spalin, a je proto velmi důležité udržovat ho čistý a průchodný. 
-        Jakmile ztratí potřebný tah, změníte technologii vytápění, či připojíte nový spotřebič, je nutné přistoupit k jeho rekonstrukci.
+        Funkční komín je jednou z nejdůležitějších součástí každé zdravé budovy. Slouží k bezpečnému
+        odvádění spalin, a je proto velmi důležité udržovat ho čistý a průchodný. Jakmile ztratí
+        potřebný tah, změníte technologii vytápění, či připojíte nový spotřebič, je nutné přistoupit
+        k jeho rekonstrukci.
       </p>
 
       <h2>Proč a jak frézujeme?</h2>
       <p>
-        Ekonomicky výhodný a přitom šetrný způsob rekonstrukce komínového tělesa je právě frézování. Použitím komínové frézy lze velmi snadno <strong>zvětšit vnitřní průměr komína až o 1/3</strong>.
+        Ekonomicky výhodný a přitom šetrný způsob rekonstrukce komínového tělesa je právě frézování.
+        Použitím komínové frézy lze velmi snadno{" "}
+        <strong>zvětšit vnitřní průměr komína až o 1/3</strong>.
       </p>
-      
+
       <ol>
-        <li><strong>Spuštění frézy:</strong> Frézovací hlava se spustí ústím komína do jeho vnitřku.</li>
-        <li><strong>Odbroušení:</strong> Pomocí vysokých otáček fréza postupně obrušuje vnitřní zdivo na drobný prach.</li>
-        <li><strong>Příprava na vložkování:</strong> Tímto procesem se vytvoří dostatečný prostor pro vložení nové, bezpečné komínové vložky. (Lze frézovat i zakřivený komín!)</li>
-        <li><strong>Dokončení:</strong> Po frézování se <em>vždy</em> musí provést vložkování z důvodu absolutní těsnosti a požární bezpečnosti.</li>
+        <li>
+          <strong>Spuštění frézy:</strong> Frézovací hlava se spustí ústím komína do jeho vnitřku.
+        </li>
+        <li>
+          <strong>Odbroušení:</strong> Pomocí vysokých otáček fréza postupně obrušuje vnitřní zdivo
+          na drobný prach.
+        </li>
+        <li>
+          <strong>Příprava na vložkování:</strong> Tímto procesem se vytvoří dostatečný prostor pro
+          vložení nové, bezpečné komínové vložky. (Lze frézovat i zakřivený komín!)
+        </li>
+        <li>
+          <strong>Dokončení:</strong> Po frézování se <em>vždy</em> musí provést vložkování z důvodu
+          absolutní těsnosti a požární bezpečnosti.
+        </li>
       </ol>
 
       <h2>Kdy je frézování nejlepší volbou?</h2>
@@ -39,7 +58,9 @@ function FrezovaniPage() {
         <li>Při změně spotřebiče, který pro bezpečný provoz potřebuje větší průměr komína.</li>
         <li>Pro vyčištění silně zadehtovaného komína, který nelze vyčistit běžnou cestou.</li>
         <li>Jako nezbytná příprava na vložkování komína nerezovou nebo keramickou vložkou.</li>
-        <li>Při přechodu na jinou technologii vytápění (např. na moderní kondenzační plynový kotel).</li>
+        <li>
+          Při přechodu na jinou technologii vytápění (např. na moderní kondenzační plynový kotel).
+        </li>
         <li>Při rekonstrukci starších budov a sanaci historických komínů.</li>
       </ul>
 
@@ -71,7 +92,9 @@ function FrezovaniPage() {
 
       <h2>Hlavní výhody frézování</h2>
       <p>
-        Při rekonstrukci komínového tělesa je frézování mnohem <strong>rychlejší a levnější</strong> než zdlouhavé bourání starého a stavba nového komína. Nevyžaduje masivní stavební zásahy do interiéru domu.
+        Při rekonstrukci komínového tělesa je frézování mnohem <strong>rychlejší a levnější</strong>{" "}
+        než zdlouhavé bourání starého a stavba nového komína. Nevyžaduje masivní stavební zásahy do
+        interiéru domu.
       </p>
       <p className="font-bold text-ember text-xl mt-6">
         Frézování komína, montáž vložky i zapojení spotřebiče jsme schopni provést za jediný den.

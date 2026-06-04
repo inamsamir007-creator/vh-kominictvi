@@ -1,4 +1,12 @@
-import { FileCheck2, Brush, ShieldCheck, AlertTriangle, MessageCircle, Cog, Layers } from "lucide-react";
+import {
+  FileCheck2,
+  Brush,
+  ShieldCheck,
+  AlertTriangle,
+  MessageCircle,
+  Cog,
+  Layers,
+} from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const services = [
@@ -9,11 +17,36 @@ const services = [
     featured: true,
     href: "/sluzby/revize-kominu",
   },
-  { icon: Brush, title: "Čištění", desc: "Mechanické vymetení, odstranění sazí a dehtu. Bez nepořádku v bytě.", href: "/sluzby/cisteni-a-kontrola" },
-  { icon: ShieldCheck, title: "Pravidelná kontrola", desc: "Roční kontrola dle vyhlášky 34/2016 Sb. včetně protokolu.", href: "/sluzby/cisteni-a-kontrola" },
-  { icon: AlertTriangle, title: "Závady & posouzení", desc: "Diagnostika tahu, vlhkosti, dehtových usazenin a vyvložkování.", href: "/sluzby/zavady-a-posouzeni" },
-  { icon: Cog, title: "Frézování", desc: "Zvětšení průměru komínového průduchu pro zvýšení tahu nebo instalaci tlustší vložky.", href: "/sluzby/frezovani" },
-  { icon: Layers, title: "Vložkování", desc: "Sanace komína vložením nerezové či ohebné vložky. Nezbytné pro moderní kondenzační kotle.", href: "/sluzby/vlozkovani" },
+  {
+    icon: Brush,
+    title: "Čištění",
+    desc: "Mechanické vymetení, odstranění sazí a dehtu. Bez nepořádku v bytě.",
+    href: "/sluzby/cisteni-a-kontrola",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Pravidelná kontrola",
+    desc: "Roční kontrola dle vyhlášky 34/2016 Sb. včetně protokolu.",
+    href: "/sluzby/cisteni-a-kontrola",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Závady & posouzení",
+    desc: "Diagnostika tahu, vlhkosti, dehtových usazenin a vyvložkování.",
+    href: "/sluzby/zavady-a-posouzeni",
+  },
+  {
+    icon: Cog,
+    title: "Frézování",
+    desc: "Zvětšení průměru komínového průduchu pro zvýšení tahu nebo instalaci tlustší vložky.",
+    href: "/sluzby/frezovani",
+  },
+  {
+    icon: Layers,
+    title: "Vložkování",
+    desc: "Sanace komína vložením nerezové či ohebné vložky. Nezbytné pro moderní kondenzační kotle.",
+    href: "/sluzby/vlozkovani",
+  },
 ];
 
 export function ServicesSection() {
@@ -26,8 +59,8 @@ export function ServicesSection() {
             Vše kolem komína na jednom místě
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Specializace na rodinné domy, chalupy a menší provozovny.
-            Vždy s papírem, který obstojí u hasičů i pojišťovny.
+            Specializace na rodinné domy, chalupy a menší provozovny. Vždy s papírem, který obstojí
+            u hasičů i pojišťovny.
           </p>
         </header>
 
@@ -41,21 +74,35 @@ export function ServicesSection() {
                 key={s.title}
                 className={[
                   "group relative block rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[var(--shadow-ember)] hover:border-ember/50",
-                  featured ? "md:col-span-2 md:row-span-1 bg-soot text-cream border-soot hover:border-ember/80" : "",
+                  featured
+                    ? "md:col-span-2 md:row-span-1 bg-soot text-cream border-soot hover:border-ember/80"
+                    : "",
                 ].join(" ")}
               >
                 <div
                   className={[
                     "grid h-11 w-11 place-items-center rounded-lg transition-all duration-500 group-hover:scale-110 group-hover:bg-ember group-hover:text-soot",
-                    featured ? "bg-ember text-soot shadow-[0_0_15px_rgba(199,103,42,0.4)] group-hover:shadow-[0_0_25px_rgba(199,103,42,0.6)]" : "bg-ember/20 text-soot",
+                    featured
+                      ? "bg-ember text-soot shadow-[0_0_15px_rgba(199,103,42,0.4)] group-hover:shadow-[0_0_25px_rgba(199,103,42,0.6)]"
+                      : "bg-ember/20 text-soot",
                   ].join(" ")}
                 >
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className={["mt-4 text-xl font-extrabold", featured ? "text-cream" : "text-soot"].join(" ")}>
+                <h3
+                  className={[
+                    "mt-4 text-xl font-extrabold",
+                    featured ? "text-cream" : "text-soot",
+                  ].join(" ")}
+                >
                   {s.title}
                 </h3>
-                <p className={["mt-2 text-sm", featured ? "text-cream/80" : "text-muted-foreground"].join(" ")}>
+                <p
+                  className={[
+                    "mt-2 text-sm",
+                    featured ? "text-cream/80" : "text-muted-foreground",
+                  ].join(" ")}
+                >
                   {s.desc}
                 </p>
                 {featured && (
@@ -72,8 +119,8 @@ export function ServicesSection() {
         <div className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-ember bg-ember/10 px-4 py-3 text-sm">
           <MessageCircle className="h-4 w-4 text-soot" />
           <p className="text-soot">
-            <strong>Poradenství zdarma</strong> — než zavoláte jiného kominíka, zeptejte se.
-            Telefon i SMS, odpovídám týž den.
+            <strong>Poradenství zdarma</strong> — než zavoláte jiného kominíka, zeptejte se. Telefon
+            i SMS, odpovídám týž den.
           </p>
         </div>
       </div>

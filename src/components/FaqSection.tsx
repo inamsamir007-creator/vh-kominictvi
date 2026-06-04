@@ -49,9 +49,7 @@ export function FaqSection() {
               <AccordionTrigger className="text-left text-lg font-bold text-soot hover:no-underline">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-base text-muted-foreground">
-                {f.a}
-              </AccordionContent>
+              <AccordionContent className="text-base text-muted-foreground">{f.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

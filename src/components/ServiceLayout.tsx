@@ -16,14 +16,14 @@ export function ServiceLayout({ title, subtitle, children }: ServiceLayoutProps)
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(199,103,42,0.15),transparent_50%)]" />
         <div className="mx-auto max-w-4xl px-4 relative z-10 text-center">
           <div className="mb-6 flex items-center justify-center gap-2 text-sm font-semibold text-ember">
-            <Link to="/" className="hover:underline">Domů</Link>
+            <Link to="/" className="hover:underline">
+              Domů
+            </Link>
             <ChevronRight className="h-4 w-4" />
             <span>Služby</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">{title}</h1>
-          <p className="mt-6 text-lg text-cream/80 md:text-xl max-w-2xl mx-auto">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-lg text-cream/80 md:text-xl max-w-2xl mx-auto">{subtitle}</p>
         </div>
       </header>
 
@@ -48,7 +48,8 @@ export function ServiceLayout({ title, subtitle, children }: ServiceLayoutProps)
               +420 777 444 707
             </a>
             <Link
-              to="/#kontakt"
+              to="/"
+              hash="kontakt"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-md border-2 border-soot bg-transparent px-8 text-lg font-bold text-soot transition-all hover:bg-soot hover:text-cream"
             >
               Nezávazná poptávka

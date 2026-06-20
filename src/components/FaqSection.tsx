@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "Kolik stojí revize komínu?",
-    a: "Standardní revize rodinného domu vychází od 1 200 Kč včetně písemné zprávy. Přesnou cenu vždy řeknu předem po telefonu, žádné překvapení na faktuře.",
+    a: "Standardní revize rodinného domu vychází od 2000+ Kč včetně písemné zprávy. Přesnou cenu vždy řeknu předem po telefonu, žádné překvapení na faktuře.",
   },
   {
     q: "Jak rychle dokážete přijet?",

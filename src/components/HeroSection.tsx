@@ -28,7 +28,7 @@ function MagneticButton({ children, href }: { children: React.ReactNode; href: s
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className="group inline-flex h-14 items-center justify-center gap-2 rounded-md bg-destructive px-8 text-lg font-bold text-destructive-foreground shadow-[var(--shadow-ember)] hover:brightness-110"
+      className="group inline-flex h-12 sm:h-14 items-center justify-center gap-2 rounded-md bg-destructive px-6 sm:px-8 text-base sm:text-lg font-bold text-destructive-foreground shadow-[var(--shadow-ember)] hover:brightness-110"
     >
       {children}
     </motion.a>
@@ -51,7 +51,10 @@ export function HeroSection() {
 
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-12 md:py-24">
         <div className="md:col-span-7 fade-up">
-          <h1 className="mt-5 text-6xl font-extrabold tracking-tight text-soot md:text-8xl">
+          <div className="mb-4 inline-flex items-center rounded-full border border-ember/30 bg-ember/10 px-4 py-1.5 text-base font-extrabold uppercase tracking-wide text-soot shadow-sm">
+            Máme na to koule
+          </div>
+          <h1 className="text-4xl font-extrabold tracking-tight text-soot sm:text-6xl md:text-8xl">
             Komín v pořádku.
             <br />
             <span className="bg-gradient-to-r from-soot/70 to-soot/50 bg-clip-text text-transparent">
@@ -64,7 +67,7 @@ export function HeroSection() {
             sobě a vystavíme zprávu pro hasiče i pojišťovnu — bez čekání.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <MagneticButton href={PHONE_HREF}>
               <Phone
                 aria-hidden="true"
@@ -74,7 +77,7 @@ export function HeroSection() {
             </MagneticButton>
             <a
               href="#kontakt"
-              className="inline-flex h-14 items-center justify-center rounded-md border border-border bg-card/80 px-8 text-lg font-bold text-soot backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:bg-muted hover:shadow-[var(--shadow-soft)]"
+              className="inline-flex h-12 sm:h-14 items-center justify-center rounded-md border border-border bg-card/80 px-6 sm:px-8 text-base sm:text-lg font-bold text-soot backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:bg-muted hover:shadow-[var(--shadow-soft)]"
             >
               Získat nezávaznou nabídku
             </a>
@@ -82,7 +85,6 @@ export function HeroSection() {
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-soot">
             {[
-              "Certifikace — revizní technik",
               "14 let praxe v oboru",
               "Více než 500 klientů ročně",
               "Pojištění odpovědnosti 5 mil. Kč",
@@ -93,6 +95,14 @@ export function HeroSection() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center rounded-xl border border-border bg-card/50 p-4 max-w-full">
+            <img src="/kominici-logo.png" alt="Společenstvo kominíků ČR" className="h-16 w-auto object-contain" />
+            <div className="text-sm font-bold text-soot leading-tight">
+              Revizní technik spalinových cest <br />
+              <span className="text-muted-foreground font-semibold">Člen společenstva kominíků ČR</span>
+            </div>
+          </div>
         </div>
 
         {/* Owner photo card */}

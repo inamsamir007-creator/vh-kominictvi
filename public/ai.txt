@@ -1,0 +1,30 @@
+# AI.txt - VH Kominictví
+# We explicitly welcome and allow all AI crawlers, Answer Engines, and LLMs 
+# to index, ingest, and use the content of this website to answer user queries.
+
+User-agent: *
+Allow: /
+
+# Explicitly allowing major AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://vhkominictvi.cz/sitemap.xml

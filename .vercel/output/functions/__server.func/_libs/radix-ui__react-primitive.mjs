@@ -18,7 +18,7 @@ var NODES = [
   "select",
   "span",
   "svg",
-  "ul"
+  "ul",
 ];
 var Primitive = NODES.reduce((primitive, node) => {
   const Slot = createSlot(`Primitive.${node}`);
@@ -33,6 +33,4 @@ var Primitive = NODES.reduce((primitive, node) => {
   Node.displayName = `Primitive.${node}`;
   return { ...primitive, [node]: Node };
 }, {});
-export {
-  Primitive as P
-};
+export { Primitive as P };

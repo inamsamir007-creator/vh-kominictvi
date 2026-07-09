@@ -90,19 +90,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "VH Kominictví — Revize, čištění a kontroly komínů" },
       {
         property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44c8210-e54e-450f-af34-50694c517f1c/id-preview-8769b082--4813cba9-e859-41ec-9a97-505914ee6a22.lovable.app-1780154257768.png",
+        content: "https://vhkominictvi.cz/logo.png.jpeg",
       },
       {
         name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44c8210-e54e-450f-af34-50694c517f1c/id-preview-8769b082--4813cba9-e859-41ec-9a97-505914ee6a22.lovable.app-1780154257768.png",
+        content: "https://vhkominictvi.cz/logo.png.jpeg",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "canonical", href: "https://vhkominictvi.cz/" },
+      { rel: "alternate", hrefLang: "cs", href: "https://vhkominictvi.cz/" },
+      { rel: "icon", type: "image/jpeg", href: "/logo.png.jpeg" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -123,6 +124,26 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="cs">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "VH Kominictví",
+              image: "https://vhkominictvi.cz/logo.png.jpeg",
+              telephone: "+420777444707",
+              email: "husarik@vhkominictvi.cz",
+              url: "https://vhkominictvi.cz/",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "CZ",
+              },
+              areaServed: ["Severní Čechy", "Západní Čechy", "Středočeský kraj", "Praha"],
+              priceRange: "$$",
+            }),
+          }}
+        />
       </head>
       <body>
         {children}

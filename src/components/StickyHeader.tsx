@@ -1,9 +1,8 @@
 import { Phone, Facebook, MapPin } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const PHONE_DISPLAY = "+420 777 444 707";
 const PHONE_HREF = "tel:+420777444707";
-
-import { Link } from "@tanstack/react-router";
 
 export function StickyHeader() {
   return (
@@ -22,14 +21,29 @@ export function StickyHeader() {
 
         <div className="hidden items-center gap-6 md:flex">
           <div className="flex items-center gap-3 border-r border-border/60 pr-6">
-            <a href="https://www.facebook.com/vhkominictvicz/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue-600 transition-colors" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/vhkominictvicz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-blue-600 transition-colors"
+              aria-label="Facebook"
+            >
               <Facebook className="h-5 w-5" />
             </a>
-            <a href="https://maps.app.goo.gl/tvk12uiNMT5JsqND9" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-emerald-600 transition-colors" aria-label="Google Business Profile">
+            <a
+              href="https://maps.app.goo.gl/tvk12uiNMT5JsqND9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-emerald-600 transition-colors"
+              aria-label="Google Business Profile"
+            >
               <MapPin className="h-5 w-5" />
             </a>
           </div>
-          <Link to="/galerie" className="text-sm font-bold text-ember hover:text-soot transition-colors">
+          <Link
+            to="/galerie"
+            className="text-sm font-bold text-ember hover:text-soot transition-colors"
+          >
             📸 Naše Galerie
           </Link>
           <a
@@ -42,10 +56,22 @@ export function StickyHeader() {
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
-          <a href="https://www.facebook.com/vhkominictvicz/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue-600 transition-colors" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/vhkominictvicz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-blue-600 transition-colors"
+            aria-label="Facebook"
+          >
             <Facebook className="h-5 w-5" />
           </a>
-          <a href="https://maps.app.goo.gl/tvk12uiNMT5JsqND9" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-emerald-600 transition-colors" aria-label="Google Business Profile">
+          <a
+            href="https://maps.app.goo.gl/tvk12uiNMT5JsqND9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-emerald-600 transition-colors"
+            aria-label="Google Business Profile"
+          >
             <MapPin className="h-5 w-5" />
           </a>
           <a

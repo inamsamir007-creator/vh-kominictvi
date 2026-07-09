@@ -2,7 +2,10 @@ import { Phone, MessageCircle } from "lucide-react";
 
 export function MobileCallBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 p-2 backdrop-blur md:hidden" style={{ paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))' }}>
+    <div
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background/95 p-2 backdrop-blur md:hidden"
+      style={{ paddingBottom: "max(0.5rem, env(safe-area-inset-bottom))" }}
+    >
       <div className="grid grid-cols-2 gap-2">
         <a
           href="tel:+420777444707"

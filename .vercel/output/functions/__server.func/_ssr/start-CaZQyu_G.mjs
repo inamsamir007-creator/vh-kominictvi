@@ -1,4 +1,4 @@
-import { c as createMiddleware } from "./server-BzgapFw8.mjs";
+import { c as createMiddleware } from "./server-DyqklIXF.mjs";
 import { r as renderErrorPage } from "./index.mjs";
 import "../_libs/seroval.mjs";
 import "../_libs/react.mjs";
@@ -39,7 +39,7 @@ var createStart = (getOptions) => {
       }
       return options;
     },
-    createMiddleware
+    createMiddleware,
   };
 };
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
@@ -52,13 +52,11 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
     console.error(error);
     return new Response(renderErrorPage(), {
       status: 500,
-      headers: { "content-type": "text/html; charset=utf-8" }
+      headers: { "content-type": "text/html; charset=utf-8" },
     });
   }
 });
 const startInstance = createStart(() => ({
-  requestMiddleware: [errorMiddleware]
+  requestMiddleware: [errorMiddleware],
 }));
-export {
-  startInstance
-};
+export { startInstance };

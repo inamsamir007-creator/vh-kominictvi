@@ -97,10 +97,16 @@ export function HeroSection() {
           </ul>
 
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center rounded-xl border border-border bg-card/50 p-4 max-w-full">
-            <img src="/kominici-logo.png" alt="Společenstvo kominíků ČR" className="h-16 w-auto object-contain" />
+            <img
+              src="/kominici-logo.png"
+              alt="Společenstvo kominíků ČR"
+              className="h-16 w-auto object-contain"
+            />
             <div className="text-sm font-bold text-soot leading-tight">
               Revizní technik spalinových cest <br />
-              <span className="text-muted-foreground font-semibold">Člen společenstva kominíků ČR</span>
+              <span className="text-muted-foreground font-semibold">
+                Člen společenstva kominíků ČR
+              </span>
             </div>
           </div>
         </div>

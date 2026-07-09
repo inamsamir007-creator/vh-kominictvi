@@ -17,9 +17,19 @@ function createSlot$1(ownerName) {
           return child;
         }
       });
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, { ...slotProps, ref: forwardedRef, children: reactExports.isValidElement(newElement) ? reactExports.cloneElement(newElement, void 0, newChildren) : null });
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, {
+        ...slotProps,
+        ref: forwardedRef,
+        children: reactExports.isValidElement(newElement)
+          ? reactExports.cloneElement(newElement, void 0, newChildren)
+          : null,
+      });
     }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, { ...slotProps, ref: forwardedRef, children });
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, {
+      ...slotProps,
+      ref: forwardedRef,
+      children,
+    });
   });
   Slot2.displayName = `${ownerName}.Slot`;
   return Slot2;
@@ -43,7 +53,12 @@ function createSlotClone$1(ownerName) {
 }
 var SLOTTABLE_IDENTIFIER$1 = /* @__PURE__ */ Symbol("radix.slottable");
 function isSlottable$1(child) {
-  return reactExports.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER$1;
+  return (
+    reactExports.isValidElement(child) &&
+    typeof child.type === "function" &&
+    "__radixId" in child.type &&
+    child.type.__radixId === SLOTTABLE_IDENTIFIER$1
+  );
 }
 function mergeProps$1(slotProps, childProps) {
   const overrideProps = { ...childProps };
@@ -99,9 +114,19 @@ function createSlot(ownerName) {
           return child;
         }
       });
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, { ...slotProps, ref: forwardedRef, children: reactExports.isValidElement(newElement) ? reactExports.cloneElement(newElement, void 0, newChildren) : null });
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, {
+        ...slotProps,
+        ref: forwardedRef,
+        children: reactExports.isValidElement(newElement)
+          ? reactExports.cloneElement(newElement, void 0, newChildren)
+          : null,
+      });
     }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, { ...slotProps, ref: forwardedRef, children });
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, {
+      ...slotProps,
+      ref: forwardedRef,
+      children,
+    });
   });
   Slot2.displayName = `${ownerName}.Slot`;
   return Slot2;
@@ -125,7 +150,12 @@ function createSlotClone(ownerName) {
 }
 var SLOTTABLE_IDENTIFIER = /* @__PURE__ */ Symbol("radix.slottable");
 function isSlottable(child) {
-  return reactExports.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER;
+  return (
+    reactExports.isValidElement(child) &&
+    typeof child.type === "function" &&
+    "__radixId" in child.type &&
+    child.type.__radixId === SLOTTABLE_IDENTIFIER
+  );
 }
 function mergeProps(slotProps, childProps) {
   const overrideProps = { ...childProps };
@@ -164,7 +194,4 @@ function getElementRef(element) {
   }
   return element.props.ref || element.ref;
 }
-export {
-  createSlot as a,
-  createSlot$1 as c
-};
+export { createSlot as a, createSlot$1 as c };

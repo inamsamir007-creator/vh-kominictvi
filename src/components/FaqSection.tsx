@@ -33,8 +33,25 @@ const faqs = [
 ];
 
 export function FaqSection() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.a,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="scroll-mt-20 bg-background py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="mx-auto max-w-3xl px-4">
         <header className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Časté dotazy</p>

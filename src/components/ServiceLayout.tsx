@@ -22,7 +22,9 @@ export function ServiceLayout({ title, subtitle, children }: ServiceLayoutProps)
             <ChevronRight className="h-4 w-4" />
             <span>Služby</span>
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">{title}</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+            {title}
+          </h1>
           <p className="mt-6 text-lg text-cream/80 md:text-xl max-w-2xl mx-auto">{subtitle}</p>
         </div>
       </header>

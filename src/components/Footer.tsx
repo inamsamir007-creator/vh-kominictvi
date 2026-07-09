@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Facebook, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 export function Footer() {
@@ -20,6 +20,15 @@ export function Footer() {
           </p>
           <p className="mt-3 text-base font-extrabold uppercase tracking-wide text-ember">Máme na to koule</p>
           
+          <div className="mt-4 flex items-center gap-4">
+            <a href="https://www.facebook.com/vhkominictvicz/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-muted p-2 text-muted-foreground hover:bg-blue-50 hover:text-blue-600 transition-colors" aria-label="Facebook">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="https://maps.app.goo.gl/tvk12uiNMT5JsqND9" target="_blank" rel="noopener noreferrer" className="rounded-full bg-muted p-2 text-muted-foreground hover:bg-emerald-50 hover:text-emerald-600 transition-colors" aria-label="Google Business Profile">
+              <MapPin className="h-5 w-5" />
+            </a>
+          </div>
+
           <div className="mt-6 flex items-center gap-3">
             <img src="/kominici-logo.png" alt="Společenstvo kominíků ČR" className="h-12 w-auto object-contain" />
             <div className="text-xs font-bold text-muted-foreground leading-tight">

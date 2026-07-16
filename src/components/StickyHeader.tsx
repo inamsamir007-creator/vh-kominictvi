@@ -1,25 +1,52 @@
 import { Phone, Facebook, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 
 const PHONE_DISPLAY = "+420 777 444 707";
 const PHONE_HREF = "tel:+420777444707";
+const HEADER_HEIGHT = 96;
 
 export function StickyHeader() {
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+      if (currentY < HEADER_HEIGHT) {
+        setHidden(false);
+      } else if (delta > 10) {
+        setHidden(true);
+      } else if (delta < -10) {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 2xl:max-w-7xl">
+    <header
+      className={`sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70 transition-transform duration-300 md:translate-y-0 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
+      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4 2xl:max-w-7xl">
         <a href="/#top" className="group flex items-center gap-3">
           <img
             src="/logo-optimized.png"
             alt="VH Kominictví Logo"
-            className="h-16 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
+            className="h-20 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
           />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-xl font-bold tracking-tight text-soot">
               VH Kominictví
             </span>
             <span className="hidden text-xs font-extrabold uppercase tracking-wide text-ember md:block">
-              Máme na to koule
+              Máme na to koule...
             </span>
           </span>
         </a>

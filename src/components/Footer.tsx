@@ -19,7 +19,7 @@ export function Footer() {
             kontroly.
           </p>
           <p className="mt-3 text-base font-extrabold uppercase tracking-wide text-ember">
-            Máme na to koule
+            Máme na to koule...
           </p>
 
           <div className="mt-4 flex items-center gap-4">

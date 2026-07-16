@@ -114,7 +114,7 @@ export function HeroSection() {
         {/* Owner photo card — pb reserves a gap so the sticky card releases
             before touching the legal banner below the section */}
         <motion.div className="md:col-span-5 md:pb-[8vh]">
-          <div className="relative z-10 mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up md:sticky md:top-24">
+          <div className="relative z-10 mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up md:sticky md:top-28">
             <div className="overflow-hidden rounded-xl">
               <picture>
                 <source type="image/avif" srcSet="/vladan.avif" />

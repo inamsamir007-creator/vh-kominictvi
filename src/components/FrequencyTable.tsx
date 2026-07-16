@@ -36,7 +36,7 @@ export function FrequencyTable() {
 
   return (
     <section id="cetnost" className="scroll-mt-20 bg-muted/40 py-20">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 2xl:max-w-7xl">
         <header className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">
             Vyhláška 34/2016

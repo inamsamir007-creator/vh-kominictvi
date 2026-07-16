@@ -12,10 +12,7 @@ import { ContactForm } from "@/components/ContactForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      {
-        title:
-          "VH Kominictví — Revize, čištění a kontroly komínů | Severní & západní Čechy a Středočeský kraj",
-      },
+      { title: "VH Kominictví — Revize, čištění a kontroly komínů" },
       {
         name: "description",
         content:
@@ -26,7 +23,9 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Komín v pořádku. Papíry hned. Severní & západní Čechy a Středočeský kraj.",
       },
+      { property: "og:url", content: "https://vhkominictvi.cz/" },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/" }],
   }),
   component: LandingPage,
 });

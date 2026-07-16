@@ -26,7 +26,7 @@ export function CoverageSection() {
       id="oblast"
       className="scroll-mt-20 border-y border-border bg-card py-20 md:py-28 overflow-hidden"
     >
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 2xl:max-w-7xl">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

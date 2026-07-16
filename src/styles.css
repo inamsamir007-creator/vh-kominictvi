@@ -104,7 +104,9 @@
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    overflow-x: hidden;
+    /* no overflow-x here: it would make <body> a scroll container and break
+       position: sticky (hero photo card). html's overflow-x above already
+       prevents horizontal page scroll. */
   }
   h1,
   h2 {

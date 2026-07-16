@@ -10,7 +10,18 @@ export const Route = createFileRoute("/sluzby/vlozkovani")({
         content:
           "Vložkování komína nerezovou vložkou je rychlý a cenově výhodný způsob rekonstrukce starších komínů. Získejte komín, který splní všechny normy.",
       },
+      {
+        property: "og:title",
+        content: "Vložkování komínů | Bezpečná sanace nerezovou vložkou | VH Kominictví",
+      },
+      {
+        property: "og:description",
+        content:
+          "Sanace komína nerezovou vložkou — rychlá a cenově výhodná rekonstrukce starších komínů.",
+      },
+      { property: "og:url", content: "https://vhkominictvi.cz/sluzby/vlozkovani" },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/sluzby/vlozkovani" }],
   }),
   component: VlozkovaniPage,
 });
@@ -20,6 +31,7 @@ function VlozkovaniPage() {
     <ServiceLayout
       title="Vložkování komínů"
       subtitle="Komín, který splňuje všechny normy, chrání váš dům i rodinu. Vložkování je nejpoužívanější a nejspolehlivější způsob, jak ho tam dostat."
+      slug="vlozkovani"
     >
       <p className="lead">
         Vložkování komína je jednou z nejúčinnějších možností opravy, rekonstrukce či sanace komína.

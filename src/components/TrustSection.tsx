@@ -22,7 +22,7 @@ const reviews = [
 export function TrustSection() {
   return (
     <section id="recenze" className="scroll-mt-20 overflow-hidden bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 2xl:max-w-7xl">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

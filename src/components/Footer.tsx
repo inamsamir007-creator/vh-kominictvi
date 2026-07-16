@@ -4,11 +4,11 @@ import { Link } from "@tanstack/react-router";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-4 2xl:max-w-7xl">
         <div>
           <div className="group flex cursor-default items-center gap-2">
             <img
-              src="/logo.png"
+              src="/logo-optimized.png"
               alt="VH Kominictví Logo"
               className="h-10 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
             />
@@ -151,7 +151,15 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-4 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} VH Kominictví · IČO 88883736
+        © {new Date().getFullYear()} VH Kominictví · IČO 88883736 · Web vytvořil{" "}
+        <a
+          href="https://www.sartin.cz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:text-soot transition-colors"
+        >
+          sartin.cz
+        </a>
       </div>
     </footer>
   );

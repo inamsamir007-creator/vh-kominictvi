@@ -10,7 +10,18 @@ export const Route = createFileRoute("/sluzby/revize-kominu")({
         content:
           "Potřebujete revizi komína pro stavební úřad, hasiče nebo pojišťovnu? Certifikovaný kominík s 14 lety praxe. Rychlý termín a férová cena.",
       },
+      {
+        property: "og:title",
+        content: "Revize komínů | Certifikovaná revizní zpráva | VH Kominictví",
+      },
+      {
+        property: "og:description",
+        content:
+          "Revize komína pro stavební úřad, hasiče i pojišťovnu. Certifikovaný kominík s 14 lety praxe.",
+      },
+      { property: "og:url", content: "https://vhkominictvi.cz/sluzby/revize-kominu" },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/sluzby/revize-kominu" }],
   }),
   component: RevizePage,
 });
@@ -20,6 +31,7 @@ function RevizePage() {
     <ServiceLayout
       title="Revize komínů"
       subtitle="Bez platné revizní zprávy nemůžete legálně topit. Získejte ji rychle, od certifikovaného kominíka s 14 lety zkušeností."
+      slug="revize-kominu"
     >
       <p className="lead">
         Revize komína je ze zákona povinný úkon, bez kterého nesmíte uvést spotřebič do provozu.
@@ -88,7 +100,7 @@ function RevizePage() {
 
       <div className="my-10 grid gap-6 sm:grid-cols-3 not-prose">
         <div className="rounded-xl bg-card p-6 border border-border shadow-sm text-center">
-          <div className="text-4xl font-extrabold text-ember">500+</div>
+          <div className="text-4xl font-extrabold text-ember">1000+</div>
           <p className="mt-2 text-sm text-muted-foreground">spokojených klientů ročně</p>
         </div>
         <div className="rounded-xl bg-card p-6 border border-border shadow-sm text-center">

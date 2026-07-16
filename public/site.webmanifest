@@ -1,0 +1,13 @@
+{
+  "name": "VH Kominictví",
+  "short_name": "VH Kominictví",
+  "description": "Certifikovaný kominík — revize, čištění a kontroly komínů.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#181513",
+  "theme_color": "#c7672a",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

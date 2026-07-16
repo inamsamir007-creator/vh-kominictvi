@@ -10,7 +10,21 @@ export const Route = createFileRoute("/sluzby/cisteni-a-kontrola")({
         content:
           "Zajistěte si klidný spánek s pravidelnou kontrolou a čištěním komína. Certifikované služby, mechanické odstranění sazí a dehtu, zpráva pro pojišťovnu.",
       },
+      {
+        property: "og:title",
+        content: "Čištění a pravidelná roční kontrola komínů | VH Kominictví",
+      },
+      {
+        property: "og:description",
+        content:
+          "Pravidelná kontrola a čištění komína. Certifikované služby, mechanické odstranění sazí a dehtu, zpráva pro pojišťovnu.",
+      },
+      {
+        property: "og:url",
+        content: "https://vhkominictvi.cz/sluzby/cisteni-a-kontrola",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/sluzby/cisteni-a-kontrola" }],
   }),
   component: CisteniPage,
 });
@@ -20,6 +34,7 @@ function CisteniPage() {
     <ServiceLayout
       title="Čištění a pravidelná roční kontrola"
       subtitle="Nečekejte na požár nebo otravu spalinami. Získejte klidný spánek a jistotu s certifikovanou údržbou vaší spalinové cesty."
+      slug="cisteni-a-kontrola"
     >
       <p className="lead">
         Požár domu nebo dokonce otrava spalinami mohou být důsledkem nečištěného a zanedbaného

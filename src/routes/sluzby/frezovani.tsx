@@ -10,7 +10,15 @@ export const Route = createFileRoute("/sluzby/frezovani")({
         content:
           "Ekonomicky výhodný a šetrný způsob rekonstrukce komínového tělesa bez bourání. Zvětšete průduch a připravte komín pro bezpečné vložkování.",
       },
+      { property: "og:title", content: "Frézování komínů | Rychlá obnova tahu | VH Kominictví" },
+      {
+        property: "og:description",
+        content:
+          "Šetrná rekonstrukce komínového tělesa bez bourání. Zvětšení průduchu a příprava pro bezpečné vložkování.",
+      },
+      { property: "og:url", content: "https://vhkominictvi.cz/sluzby/frezovani" },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/sluzby/frezovani" }],
   }),
   component: FrezovaniPage,
 });
@@ -20,6 +28,7 @@ function FrezovaniPage() {
     <ServiceLayout
       title="Frézování komínů"
       subtitle="Chybí vašemu komínu správný tah? Frézování je ekonomicky výhodná a rychlá cesta k bezpečnému a plně funkčnímu komínu bez nutnosti demolice."
+      slug="frezovani"
     >
       <p className="lead">
         Funkční komín je jednou z nejdůležitějších součástí každé zdravé budovy. Slouží k bezpečnému

@@ -38,22 +38,22 @@ function MagneticButton({ children, href }: { children: React.ReactNode; href: s
 export function HeroSection() {
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
-  const imageY = useTransform(scrollY, [0, 500], [0, 50]);
 
   return (
-    <section id="top" className="relative overflow-hidden">
-      {/* warm gradient background */}
-      <motion.div
-        style={{ y: backgroundY }}
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-cream via-background to-muted"
-      />
-      <div className="absolute -right-24 top-10 -z-10 h-72 w-72 rounded-full bg-ember/25 blur-3xl" />
+    <section id="top" className="relative">
+      {/* warm gradient background — clipped in its own layer so the section
+          stays overflow-visible (an overflow on the section would break the
+          sticky photo card below) */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <motion.div
+          style={{ y: backgroundY }}
+          className="absolute inset-0 bg-gradient-to-b from-cream via-background to-muted"
+        />
+        <div className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-ember/25 blur-3xl" />
+      </div>
 
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-12 md:py-24">
-        <div className="md:col-span-7 fade-up">
-          <div className="mb-4 inline-flex items-center rounded-full border border-ember/30 bg-ember/10 px-4 py-1.5 text-base font-extrabold uppercase tracking-wide text-soot shadow-sm">
-            Máme na to koule
-          </div>
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-12 md:pt-24 md:pb-0 2xl:max-w-7xl">
+        <div className="md:col-span-7 md:pb-24 fade-up">
           <h1 className="text-4xl font-extrabold tracking-tight text-soot sm:text-6xl md:text-8xl">
             Komín v pořádku.
             <br />
@@ -83,14 +83,14 @@ export function HeroSection() {
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-soot">
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-soot xl:flex-nowrap xl:justify-between xl:gap-x-3">
             {[
               "14 let praxe v oboru",
-              "Více než 500 klientů ročně",
+              "Více než 1000 klientů ročně",
               "Pojištění odpovědnosti 5 mil. Kč",
             ].map((t) => (
-              <li key={t} className="inline-flex items-center gap-2">
-                <CheckCircle2 aria-hidden="true" className="h-4 w-4 text-ember" />
+              <li key={t} className="inline-flex items-center gap-2 xl:whitespace-nowrap">
+                <CheckCircle2 aria-hidden="true" className="h-4 w-4 shrink-0 text-ember" />
                 <span className="font-bold">{t}</span>
               </li>
             ))}
@@ -111,18 +111,22 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Owner photo card */}
-        <motion.div style={{ y: imageY }} className="md:col-span-5">
-          <div className="relative mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up">
+        {/* Owner photo card — pb reserves a gap so the sticky card releases
+            before touching the legal banner below the section */}
+        <motion.div className="md:col-span-5 md:pb-[8vh]">
+          <div className="relative z-10 mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up md:sticky md:top-24">
             <div className="overflow-hidden rounded-xl">
-              <img
-                src="/vladan.jpg"
-                alt="Vladan Husařík — kominík VH Kominictví"
-                width={400}
-                height={500}
-                className="aspect-[4/5] w-full object-cover object-top"
-                loading="eager"
-              />
+              <picture>
+                <source type="image/avif" srcSet="/vladan.avif" />
+                <img
+                  src="/vladan.jpg"
+                  alt="Vladan Husařík — kominík VH Kominictví"
+                  width={400}
+                  height={500}
+                  className="aspect-[4/5] w-full object-cover object-top"
+                  loading="eager"
+                />
+              </picture>
             </div>
             <div className="mt-4 flex items-center justify-between">
               <div>

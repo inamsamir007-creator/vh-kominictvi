@@ -43,7 +43,7 @@ export function ContactForm() {
 
   return (
     <section id="kontakt" className="scroll-mt-20 bg-soot py-20 text-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-2 md:items-center">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-2 md:items-center 2xl:max-w-7xl">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Kontakt</p>
           <h2 className="mt-2 text-4xl font-extrabold md:text-5xl">

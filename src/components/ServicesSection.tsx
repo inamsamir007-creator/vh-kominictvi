@@ -52,7 +52,7 @@ const services = [
 export function ServicesSection() {
   return (
     <section id="sluzby" className="scroll-mt-20 bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 2xl:max-w-7xl">
         <header className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ember">Co dělám</p>
           <h2 className="mt-2 text-4xl font-extrabold text-soot md:text-5xl">

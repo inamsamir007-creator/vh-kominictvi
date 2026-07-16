@@ -10,7 +10,18 @@ export const Route = createFileRoute("/sluzby/zavady-a-posouzeni")({
         content:
           "Máte podezření na závadu komína? Diagnostika tahu, vlhkosti, dehtových usazenin. Odborné posouzení stavu a návrh řešení na míru.",
       },
+      { property: "og:title", content: "Závady komínů & odborné posouzení | VH Kominictví" },
+      {
+        property: "og:description",
+        content:
+          "Diagnostika tahu, vlhkosti a dehtových usazenin. Odborné posouzení stavu komína a návrh řešení.",
+      },
+      {
+        property: "og:url",
+        content: "https://vhkominictvi.cz/sluzby/zavady-a-posouzeni",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/sluzby/zavady-a-posouzeni" }],
   }),
   component: ZavadyPage,
 });
@@ -20,6 +31,7 @@ function ZavadyPage() {
     <ServiceLayout
       title="Závady & odborné posouzení"
       subtitle="Něco s komínem nehraje? Než vám řekne pojišťovna nebo hasič, zjistěte to sami — a vyřešte to dřív, než se z drobnosti stane problém."
+      slug="zavady-a-posouzeni"
     >
       <p className="lead">
         Komín na sebe většinou neupozorní, dokud není pozdě. Zápach spalin v místnosti, vlhké mapy

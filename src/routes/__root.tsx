@@ -98,12 +98,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "cs_CZ" },
+      { name: "theme-color", content: "#c7672a" },
     ],
     links: [
-      { rel: "canonical", href: "https://vhkominictvi.cz/" },
-      { rel: "alternate", hrefLang: "cs", href: "https://vhkominictvi.cz/" },
-      { rel: "icon", type: "image/jpeg", href: "/logo.png.jpeg" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/icon-16.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/icon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "48x48", href: "/icon-48.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/icon-192.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -140,6 +144,10 @@ function RootShell({ children }: { children: ReactNode }) {
                 addressCountry: "CZ",
               },
               areaServed: ["Severní Čechy", "Západní Čechy", "Středočeský kraj", "Praha"],
+              sameAs: [
+                "https://www.facebook.com/vhkominictvicz/",
+                "https://maps.app.goo.gl/tvk12uiNMT5JsqND9",
+              ],
               priceRange: "$$",
             }),
           }}

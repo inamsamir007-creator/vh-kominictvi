@@ -7,15 +7,20 @@ const PHONE_HREF = "tel:+420777444707";
 export function StickyHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
-        <a href="/#top" className="group flex items-center gap-2">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 2xl:max-w-7xl">
+        <a href="/#top" className="group flex items-center gap-3">
           <img
-            src="/logo.png"
+            src="/logo-optimized.png"
             alt="VH Kominictví Logo"
-            className="h-10 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
+            className="h-16 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
           />
-          <span className="font-display text-xl font-bold tracking-tight text-soot">
-            VH Kominictví
+          <span className="flex flex-col leading-tight">
+            <span className="font-display text-xl font-bold tracking-tight text-soot">
+              VH Kominictví
+            </span>
+            <span className="hidden text-xs font-extrabold uppercase tracking-wide text-ember md:block">
+              Máme na to koule
+            </span>
           </span>
         </a>
 

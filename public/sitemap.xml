@@ -2,30 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vhkominictvi.cz/</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://vhkominictvi.cz/sluzby/cisteni-a-kontrola</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vhkominictvi.cz/sluzby/frezovani</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vhkominictvi.cz/sluzby/vlozkovani</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vhkominictvi.cz/sluzby/revize-kominu</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vhkominictvi.cz/sluzby/zavady-a-posouzeni</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vhkominictvi.cz/galerie</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

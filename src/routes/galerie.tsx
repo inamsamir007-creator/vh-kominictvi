@@ -12,10 +12,26 @@ export const Route = createFileRoute("/galerie")({
         content:
           "Prohlédněte si ukázky naší práce. Frézování, vložkování, čištění a stavby komínů v oblasti Kryry, Louny, Žatec, Rakovník a širokém okolí.",
       },
+      { property: "og:title", content: "Galerie naší práce | VH Kominictví" },
+      {
+        property: "og:description",
+        content:
+          "Ukázky kominické práce — čištění, revize, frézování a vložkování komínů v okolí Kryr.",
+      },
+      { property: "og:url", content: "https://vhkominictvi.cz/galerie" },
     ],
+    links: [{ rel: "canonical", href: "https://vhkominictvi.cz/galerie" }],
   }),
   component: GaleriePage,
 });
+
+function thumbSrcSet(filename: string, ext: "avif" | "jpg") {
+  const base = filename.replace(/\.jpg$/, "");
+  return `/gallery/thumbs/${base}-480w.${ext} 480w, /gallery/thumbs/${base}-960w.${ext} 960w`;
+}
+
+const THUMB_SIZES =
+  "(min-width: 1536px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw";
 
 const galleryImages = [
   { src: "038e5f86-8bd8-4156-aa37-e6fe86e9c4e6.jpg", alt: "Čištění komína Kryry - ukázka práce" },
@@ -110,7 +126,7 @@ function GaleriePage() {
 
   return (
     <div className="bg-background min-h-screen py-16 md:py-24 pb-20 md:pb-24">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 2xl:max-w-7xl">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +141,7 @@ function GaleriePage() {
           </p>
         </motion.header>
 
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-4 space-y-4">
           {galleryImages.map((img, index) => (
             <motion.div
               key={img.src}
@@ -136,12 +152,22 @@ function GaleriePage() {
               className="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-xl bg-muted"
               onClick={() => setSelectedIndex(index)}
             >
-              <img
-                src={`/gallery/${img.src}`}
-                alt={img.alt}
-                loading="lazy"
-                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcSet={thumbSrcSet(img.src, "avif")}
+                  sizes={THUMB_SIZES}
+                />
+                <img
+                  src={`/gallery/thumbs/${img.src.replace(/\.jpg$/, "")}-960w.jpg`}
+                  srcSet={thumbSrcSet(img.src, "jpg")}
+                  sizes={THUMB_SIZES}
+                  alt={img.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-soot/0 transition-colors duration-300 group-hover:bg-soot/20" />
             </motion.div>
           ))}

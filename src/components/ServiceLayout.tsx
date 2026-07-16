@@ -5,12 +5,44 @@ import { ChevronRight, Phone } from "lucide-react";
 interface ServiceLayoutProps {
   title: string;
   subtitle: string;
+  slug: string;
   children: ReactNode;
 }
 
-export function ServiceLayout({ title, subtitle, children }: ServiceLayoutProps) {
+export function ServiceLayout({ title, subtitle, slug, children }: ServiceLayoutProps) {
+  const url = `https://vhkominictvi.cz/sluzby/${slug}`;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Domů", item: "https://vhkominictvi.cz/" },
+      { "@type": "ListItem", position: 2, name: "Služby", item: "https://vhkominictvi.cz/#sluzby" },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: title,
+    description: subtitle,
+    serviceType: title,
+    provider: { "@type": "LocalBusiness", name: "VH Kominictví", url: "https://vhkominictvi.cz/" },
+    areaServed: ["Severní Čechy", "Západní Čechy", "Středočeský kraj", "Praha"],
+    url,
+  };
+
   return (
     <article className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero Section */}
       <header className="relative overflow-hidden bg-soot py-20 text-cream md:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(199,103,42,0.15),transparent_50%)]" />

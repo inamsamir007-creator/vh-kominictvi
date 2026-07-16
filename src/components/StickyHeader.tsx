@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const PHONE_DISPLAY = "+420 777 444 707";
 const PHONE_HREF = "tel:+420777444707";
-const HEADER_HEIGHT = 96;
+const HEADER_HEIGHT = 68;
 
 export function StickyHeader() {
   const [hidden, setHidden] = useState(false);
@@ -34,18 +34,13 @@ export function StickyHeader() {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4 2xl:max-w-7xl">
+      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-4 2xl:max-w-7xl">
         <a href="/#top" className="group flex items-center gap-3">
-          <img
-            src="/logo-optimized.png"
-            alt="VH Kominictví Logo"
-            className="h-20 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
-          />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-xl font-bold tracking-tight text-soot">
               VH Kominictví
             </span>
-            <span className="hidden text-xs font-extrabold uppercase tracking-wide text-ember md:block">
+            <span className="hidden text-xs font-extrabold uppercase tracking-wide text-destructive md:block">
               Máme na to koule...
             </span>
           </span>

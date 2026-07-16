@@ -114,19 +114,19 @@ export function HeroSection() {
         {/* Owner photo card — pb reserves a gap so the sticky card releases
             before touching the legal banner below the section */}
         <motion.div className="md:col-span-5 md:pb-[8vh]">
-          <div className="relative z-10 mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up md:sticky md:top-28">
-            <div className="overflow-hidden rounded-xl">
-              <picture>
-                <source type="image/avif" srcSet="/vladan.avif" />
-                <img
-                  src="/vladan.jpg"
-                  alt="Vladan Husařík — kominík VH Kominictví"
-                  width={400}
-                  height={500}
-                  className="aspect-[4/5] w-full object-cover object-top"
-                  loading="eager"
-                />
-              </picture>
+          <div className="relative z-10 mx-auto max-w-sm rounded-2xl border border-cream/20 bg-card/70 p-6 shadow-[var(--shadow-ember)] backdrop-blur-xl fade-up md:sticky md:top-[76px]">
+            <div className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-xl bg-cream px-2 py-6">
+              <img
+                src="/logo-card.png"
+                alt="VH Kominictví logo"
+                width={480}
+                height={410}
+                className="w-full object-contain"
+                loading="eager"
+              />
+              <p className="text-center text-lg font-extrabold uppercase tracking-wide text-destructive">
+                Máme na to koule...
+              </p>
             </div>
             <div className="mt-4 flex items-center justify-between">
               <div>

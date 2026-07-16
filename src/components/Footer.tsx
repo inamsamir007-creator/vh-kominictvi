@@ -18,7 +18,7 @@ export function Footer() {
             Certifikovaný kominík pro Severní & západní Čechy a Středočeský kraj. Revize · čištění ·
             kontroly.
           </p>
-          <p className="mt-3 text-base font-extrabold uppercase tracking-wide text-ember">
+          <p className="mt-3 text-base font-extrabold uppercase tracking-wide text-destructive">
             Máme na to koule...
           </p>
 
